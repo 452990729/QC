@@ -1,0 +1,581 @@
+MissingInputException in line 2 of /mnt/dfc_data1/home/lixuefei/Pipeline/QC/Test/snakefile.txt:
+Missing input files for rule All:
+6.Final/QCStat.xls
+MissingInputException in line 6 of /mnt/dfc_data1/home/lixuefei/Pipeline/QC/Test/snakefile.txt:
+Missing input files for rule StatQC:
+1.QC/P19027686_QC_report.json
+1.QC/P19021811_QC_report.json
+1.QC/P19020827_QC_report.json
+1.QC/P19021799_QC_report.json
+1.QC/P19024999_QC_report.json
+1.QC/P19021808_QC_report.json
+1.QC/P19023405_QC_report.json
+1.QC/P19025748_QC_report.json
+1.QC/P19027319_QC_report.json
+1.QC/P19019419_QC_report.json
+1.QC/P19023351_QC_report.json
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	All
+	11	QC
+	1	StatQC
+	13
+
+rule QC:
+    input: RawData/P19025748_1.fq.gz, RawData/P19025748_2.fq.gz
+    output: 1.QC/P19025748_1.clean.fq.gz, 1.QC/P19025748_2.clean.fq.gz, 1.QC/P19025748_QC_report.json, 1.QC/P19025748_QC_report.html
+    log: logs/P19025748.qc.e, logs/P19025748.qc.o
+    jobid: 5
+    wildcards: sample=P19025748
+
+/mnt/dfc_data1/home/lixuefei/Pipeline/QC/Bin/../Software/fastp -i RawData/P19025748_1.fq.gz -o 1.QC/P19025748_1.clean.fq.gz -I RawData/P19025748_2.fq.gz -O 1.QC/P19025748_2.clean.fq.gz -A -j 1.QC/P19025748_QC_report.json -h 1.QC/P19025748_QC_report.html
+rule QC:
+    input: RawData/P19024999_1.fq.gz, RawData/P19024999_2.fq.gz
+    output: 1.QC/P19024999_1.clean.fq.gz, 1.QC/P19024999_2.clean.fq.gz, 1.QC/P19024999_QC_report.json, 1.QC/P19024999_QC_report.html
+    log: logs/P19024999.qc.e, logs/P19024999.qc.o
+    jobid: 11
+    wildcards: sample=P19024999
+
+/mnt/dfc_data1/home/lixuefei/Pipeline/QC/Bin/../Software/fastp -i RawData/P19024999_1.fq.gz -o 1.QC/P19024999_1.clean.fq.gz -I RawData/P19024999_2.fq.gz -O 1.QC/P19024999_2.clean.fq.gz -A -j 1.QC/P19024999_QC_report.json -h 1.QC/P19024999_QC_report.html
+rule QC:
+    input: RawData/P19023351_1.fq.gz, RawData/P19023351_2.fq.gz
+    output: 1.QC/P19023351_1.clean.fq.gz, 1.QC/P19023351_2.clean.fq.gz, 1.QC/P19023351_QC_report.json, 1.QC/P19023351_QC_report.html
+    log: logs/P19023351.qc.e, logs/P19023351.qc.o
+    jobid: 8
+    wildcards: sample=P19023351
+
+/mnt/dfc_data1/home/lixuefei/Pipeline/QC/Bin/../Software/fastp -i RawData/P19023351_1.fq.gz -o 1.QC/P19023351_1.clean.fq.gz -I RawData/P19023351_2.fq.gz -O 1.QC/P19023351_2.clean.fq.gz -A -j 1.QC/P19023351_QC_report.json -h 1.QC/P19023351_QC_report.html
+rule QC:
+    input: RawData/P19023405_1.fq.gz, RawData/P19023405_2.fq.gz
+    output: 1.QC/P19023405_1.clean.fq.gz, 1.QC/P19023405_2.clean.fq.gz, 1.QC/P19023405_QC_report.json, 1.QC/P19023405_QC_report.html
+    log: logs/P19023405.qc.e, logs/P19023405.qc.o
+    jobid: 9
+    wildcards: sample=P19023405
+
+/mnt/dfc_data1/home/lixuefei/Pipeline/QC/Bin/../Software/fastp -i RawData/P19023405_1.fq.gz -o 1.QC/P19023405_1.clean.fq.gz -I RawData/P19023405_2.fq.gz -O 1.QC/P19023405_2.clean.fq.gz -A -j 1.QC/P19023405_QC_report.json -h 1.QC/P19023405_QC_report.html
+rule QC:
+    input: RawData/P19020827_1.fq.gz, RawData/P19020827_2.fq.gz
+    output: 1.QC/P19020827_1.clean.fq.gz, 1.QC/P19020827_2.clean.fq.gz, 1.QC/P19020827_QC_report.json, 1.QC/P19020827_QC_report.html
+    log: logs/P19020827.qc.e, logs/P19020827.qc.o
+    jobid: 4
+    wildcards: sample=P19020827
+
+/mnt/dfc_data1/home/lixuefei/Pipeline/QC/Bin/../Software/fastp -i RawData/P19020827_1.fq.gz -o 1.QC/P19020827_1.clean.fq.gz -I RawData/P19020827_2.fq.gz -O 1.QC/P19020827_2.clean.fq.gz -A -j 1.QC/P19020827_QC_report.json -h 1.QC/P19020827_QC_report.html
+rule QC:
+    input: RawData/P19021808_1.fq.gz, RawData/P19021808_2.fq.gz
+    output: 1.QC/P19021808_1.clean.fq.gz, 1.QC/P19021808_2.clean.fq.gz, 1.QC/P19021808_QC_report.json, 1.QC/P19021808_QC_report.html
+    log: logs/P19021808.qc.e, logs/P19021808.qc.o
+    jobid: 6
+    wildcards: sample=P19021808
+
+/mnt/dfc_data1/home/lixuefei/Pipeline/QC/Bin/../Software/fastp -i RawData/P19021808_1.fq.gz -o 1.QC/P19021808_1.clean.fq.gz -I RawData/P19021808_2.fq.gz -O 1.QC/P19021808_2.clean.fq.gz -A -j 1.QC/P19021808_QC_report.json -h 1.QC/P19021808_QC_report.html
+rule QC:
+    input: RawData/P19027319_1.fq.gz, RawData/P19027319_2.fq.gz
+    output: 1.QC/P19027319_1.clean.fq.gz, 1.QC/P19027319_2.clean.fq.gz, 1.QC/P19027319_QC_report.json, 1.QC/P19027319_QC_report.html
+    log: logs/P19027319.qc.e, logs/P19027319.qc.o
+    jobid: 3
+    wildcards: sample=P19027319
+
+/mnt/dfc_data1/home/lixuefei/Pipeline/QC/Bin/../Software/fastp -i RawData/P19027319_1.fq.gz -o 1.QC/P19027319_1.clean.fq.gz -I RawData/P19027319_2.fq.gz -O 1.QC/P19027319_2.clean.fq.gz -A -j 1.QC/P19027319_QC_report.json -h 1.QC/P19027319_QC_report.html
+rule QC:
+    input: RawData/P19027686_1.fq.gz, RawData/P19027686_2.fq.gz
+    output: 1.QC/P19027686_1.clean.fq.gz, 1.QC/P19027686_2.clean.fq.gz, 1.QC/P19027686_QC_report.json, 1.QC/P19027686_QC_report.html
+    log: logs/P19027686.qc.e, logs/P19027686.qc.o
+    jobid: 12
+    wildcards: sample=P19027686
+
+/mnt/dfc_data1/home/lixuefei/Pipeline/QC/Bin/../Software/fastp -i RawData/P19027686_1.fq.gz -o 1.QC/P19027686_1.clean.fq.gz -I RawData/P19027686_2.fq.gz -O 1.QC/P19027686_2.clean.fq.gz -A -j 1.QC/P19027686_QC_report.json -h 1.QC/P19027686_QC_report.html
+rule QC:
+    input: RawData/P19021811_1.fq.gz, RawData/P19021811_2.fq.gz
+    output: 1.QC/P19021811_1.clean.fq.gz, 1.QC/P19021811_2.clean.fq.gz, 1.QC/P19021811_QC_report.json, 1.QC/P19021811_QC_report.html
+    log: logs/P19021811.qc.e, logs/P19021811.qc.o
+    jobid: 2
+    wildcards: sample=P19021811
+
+/mnt/dfc_data1/home/lixuefei/Pipeline/QC/Bin/../Software/fastp -i RawData/P19021811_1.fq.gz -o 1.QC/P19021811_1.clean.fq.gz -I RawData/P19021811_2.fq.gz -O 1.QC/P19021811_2.clean.fq.gz -A -j 1.QC/P19021811_QC_report.json -h 1.QC/P19021811_QC_report.html
+rule QC:
+    input: RawData/P19021799_1.fq.gz, RawData/P19021799_2.fq.gz
+    output: 1.QC/P19021799_1.clean.fq.gz, 1.QC/P19021799_2.clean.fq.gz, 1.QC/P19021799_QC_report.json, 1.QC/P19021799_QC_report.html
+    log: logs/P19021799.qc.e, logs/P19021799.qc.o
+    jobid: 10
+    wildcards: sample=P19021799
+
+/mnt/dfc_data1/home/lixuefei/Pipeline/QC/Bin/../Software/fastp -i RawData/P19021799_1.fq.gz -o 1.QC/P19021799_1.clean.fq.gz -I RawData/P19021799_2.fq.gz -O 1.QC/P19021799_2.clean.fq.gz -A -j 1.QC/P19021799_QC_report.json -h 1.QC/P19021799_QC_report.html
+rule QC:
+    input: RawData/P19019419_1.fq.gz, RawData/P19019419_2.fq.gz
+    output: 1.QC/P19019419_1.clean.fq.gz, 1.QC/P19019419_2.clean.fq.gz, 1.QC/P19019419_QC_report.json, 1.QC/P19019419_QC_report.html
+    log: logs/P19019419.qc.e, logs/P19019419.qc.o
+    jobid: 7
+    wildcards: sample=P19019419
+
+/mnt/dfc_data1/home/lixuefei/Pipeline/QC/Bin/../Software/fastp -i RawData/P19019419_1.fq.gz -o 1.QC/P19019419_1.clean.fq.gz -I RawData/P19019419_2.fq.gz -O 1.QC/P19019419_2.clean.fq.gz -A -j 1.QC/P19019419_QC_report.json -h 1.QC/P19019419_QC_report.html
+Read1 before filtering:
+total reads: 21309
+total bases: 3196350
+Q20 bases: 3145353(98.4045%)
+Q30 bases: 3050198(95.4275%)
+
+Read2 before filtering:
+total reads: 21309
+total bases: 3196350
+Q20 bases: 3109418(97.2803%)
+Q30 bases: 2988195(93.4877%)
+
+Read1 after filtering:
+total reads: 21091
+total bases: 3163650
+Q20 bases: 3116919(98.5229%)
+Q30 bases: 3026735(95.6722%)
+
+Read2 aftering filtering:
+total reads: 21091
+total bases: 3163650
+Q20 bases: 3092878(97.763%)
+Q30 bases: 2979307(94.1731%)
+
+Filtering result:
+reads passed filter: 42182
+reads failed due to low quality: 432
+reads failed due to too many N: 4
+reads failed due to too short: 0
+
+Duplication rate: 17.0025%
+
+Insert size peak (evaluated by paired-end reads): 148
+Read1 before filtering:
+total reads: 23643
+total bases: 3546450
+Q20 bases: 3489434(98.3923%)
+Q30 bases: 3384566(95.4353%)
+
+Read2 before filtering:
+total reads: 23643
+total bases: 3546450
+Q20 bases: 3443632(97.1008%)
+Q30 bases: 3303207(93.1412%)
+
+Read1 after filtering:
+total reads: 23377
+total bases: 3506550
+Q20 bases: 3454758(98.523%)
+Q30 bases: 3355840(95.702%)
+
+Read2 aftering filtering:
+total reads: 23377
+total bases: 3506550
+Q20 bases: 3423138(97.6213%)
+Q30 bases: 3292111(93.8846%)
+
+Filtering result:
+reads passed filter: 46754
+reads failed due to low quality: 532
+reads failed due to too many N: 0
+reads failed due to too short: 0
+Read1 before filtering:
+total reads: 17924
+total bases: 2688600
+Q20 bases: 2641769(98.2582%)
+Q30 bases: 2556274(95.0783%)
+
+Read2 before filtering:
+total reads: 17924
+total bases: 2688600
+Q20 bases: 2606717(96.9544%)
+Q30 bases: 2508094(93.2862%)
+
+Read1 after filtering:
+total reads: 17669
+total bases: 2650350
+Q20 bases: 2607282(98.375%)
+Q30 bases: 2526223(95.3166%)
+
+Read2 aftering filtering:
+total reads: 17669
+total bases: 2650350
+Q20 bases: 2588690(97.6735%)
+Q30 bases: 2498671(94.277%)
+
+Filtering result:
+reads passed filter: 35338
+reads failed due to low quality: 498
+reads failed due to too many N: 12
+reads failed due to too short: 0
+
+Duplication rate: 16.0007%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+Duplication rate: 18.0456%
+
+Insert size peak (evaluated by paired-end reads): 168
+Read1 before filtering:
+total reads: 16535
+total bases: 2480250
+Q20 bases: 2415127(97.3743%)
+Q30 bases: 2315955(93.3759%)
+
+Read2 before filtering:
+total reads: 16535
+total bases: 2480250
+Q20 bases: 2401213(96.8133%)
+Q30 bases: 2298327(92.6651%)
+
+Read1 after filtering:
+total reads: 16353
+total bases: 2452950
+Q20 bases: 2391293(97.4864%)
+Q30 bases: 2295596(93.5851%)
+
+Read2 aftering filtering:
+total reads: 16353
+total bases: 2452950
+Q20 bases: 2387699(97.3399%)
+Q30 bases: 2290774(93.3885%)
+
+Filtering result:
+reads passed filter: 32706
+reads failed due to low quality: 360
+reads failed due to too many N: 4
+reads failed due to too short: 0
+
+Duplication rate: 10.8988%
+
+Insert size peak (evaluated by paired-end reads): 132
+Read1 before filtering:
+total reads: 23031
+total bases: 3454650
+Q20 bases: 3422003(99.055%)
+Q30 bases: 3355674(97.135%)
+
+Read2 before filtering:
+total reads: 23031
+total bases: 3454650
+Q20 bases: 3391101(98.1605%)
+Q30 bases: 3306219(95.7034%)
+
+Read1 after filtering:
+total reads: 22806
+total bases: 3420900
+Q20 bases: 3391978(99.1545%)
+Q30 bases: 3330131(97.3466%)
+
+Read2 aftering filtering:
+total reads: 22806
+total bases: 3420900
+Q20 bases: 3374774(98.6516%)
+Q30 bases: 3297017(96.3786%)
+
+Filtering result:
+reads passed filter: 45612
+reads failed due to low quality: 448
+reads failed due to too many N: 2
+reads failed due to too short: 0
+
+JSON report: 1.QC/P19021811_QC_report.json
+HTML report: 1.QC/P19021811_QC_report.html
+
+/mnt/dfc_data1/home/lixuefei/Pipeline/QC/Bin/../Software/fastp -i RawData/P19021811_1.fq.gz -o 1.QC/P19021811_1.clean.fq.gz -I RawData/P19021811_2.fq.gz -O 1.QC/P19021811_2.clean.fq.gz -A -j 1.QC/P19021811_QC_report.json -h 1.QC/P19021811_QC_report.html 
+fastp v0.20.0, time used: 2 seconds
+
+Duplication rate: 16.0099%
+
+Insert size peak (evaluated by paired-end reads): 141
+
+JSON report: 1.QC/P19021808_QC_report.json
+HTML report: 1.QC/P19021808_QC_report.html
+
+/mnt/dfc_data1/home/lixuefei/Pipeline/QC/Bin/../Software/fastp -i RawData/P19021808_1.fq.gz -o 1.QC/P19021808_1.clean.fq.gz -I RawData/P19021808_2.fq.gz -O 1.QC/P19021808_2.clean.fq.gz -A -j 1.QC/P19021808_QC_report.json -h 1.QC/P19021808_QC_report.html 
+fastp v0.20.0, time used: 2 seconds
+
+JSON report: 1.QC/P19021799_QC_report.json
+HTML report: 1.QC/P19021799_QC_report.html
+
+/mnt/dfc_data1/home/lixuefei/Pipeline/QC/Bin/../Software/fastp -i RawData/P19021799_1.fq.gz -o 1.QC/P19021799_1.clean.fq.gz -I RawData/P19021799_2.fq.gz -O 1.QC/P19021799_2.clean.fq.gz -A -j 1.QC/P19021799_QC_report.json -h 1.QC/P19021799_QC_report.html 
+fastp v0.20.0, time used: 2 seconds
+Read1 before filtering:
+total reads: 25068
+total bases: 3760200
+Q20 bases: 3708236(98.6181%)
+Q30 bases: 3613011(96.0856%)
+
+Read2 before filtering:
+total reads: 25068
+total bases: 3760200
+Q20 bases: 3672177(97.6591%)
+Q30 bases: 3559199(94.6545%)
+
+Read1 after filtering:
+total reads: 24761
+total bases: 3714150
+Q20 bases: 3666939(98.7289%)
+Q30 bases: 3576992(96.3071%)
+
+Read2 aftering filtering:
+total reads: 24761
+total bases: 3714150
+Q20 bases: 3650511(98.2866%)
+Q30 bases: 3547625(95.5165%)
+
+Filtering result:
+reads passed filter: 49522
+reads failed due to low quality: 604
+reads failed due to too many N: 10
+reads failed due to too short: 0
+
+Read1 before filtering:
+total reads: 25447
+total bases: 3817050
+Q20 bases: 3783539(Read1 before filtering:99.1221%)
+
+Q30 bases: 3721996total reads: (2156897.5098
+total bases: 3235200
+%)Q20 bases: 
+3187848
+(Read2 before filtering:
+total reads: 25447
+total bases: Read1 before filtering:3817050
+Q20 bases: 3760690(Read1 before filtering:98.5235%)
+Q30 bases: 98.5364
+3684911%)total reads: (
+
+total reads: 96.538219739Q30 bases: %)21800
+3100345
+
+total bases: total bases: (
+2960850327000095.8316Read1 after filtering:
+
+%)
+Q20 bases: Q20 bases: 
+total reads: 2913873252543223944
+(
+(Read2 before filtering:total bases: 
+3788100
+total reads: Q20 bases: 21568
+3757418total bases: (323520099.19
+%)
+Q20 bases: Q30 bases: 308856998.591698.41343699017(%)%)(
+
+95.467697.6483Q30 bases: Q30 bases: %)%)31367762824100
+
+((
+Q30 bases: 95.925995.3814Read2 aftering filtering:2921119%)%)
+(
+
+total reads: 90.2918
+%)
+25254Read2 before filtering:
+Read2 before filtering:
+
+
+
+total bases: total reads: 3788100Read1 after filtering:total reads: 21800
+
+19739
+Q20 bases: total reads: 
+total bases: 374671620947total bases: 3270000(2960850
+
+98.9075total bases: %)
+Q20 bases: 3142050
+Q20 bases: 3196083
+Duplication rate: Q30 bases: 2853958(Q20 bases: 3677001(97.73953099666(%)96.389819.6415(97.0672
+%)%98.6511%)Q30 bases: 
+
+%)
+3089956(Q30 bases: 2720636
+
+
+94.4941(Q30 bases: Insert size peak (evaluated by paired-end reads): Filtering result:%)91.8873018653135
+
+%)(
+reads passed filter: 
+
+96.072750508Read1 after filtering:
+%)
+
+Read1 after filtering:
+reads failed due to low quality: total reads: 
+
+37021629total reads: Read2 aftering filtering:
+
+19346
+reads failed due to too many N: total bases: 
+total reads: 163244350total bases: 20947
+
+2901900
+reads failed due to too short: Q20 bases: 
+total bases: 03201603Q20 bases: 3142050
+(285952198.6824
+(%)98.5396
+Q30 bases: %)3118260
+Q30 bases: (2775957(96.1136%)
+95.66
+%)Read2 aftering filtering:
+
+
+total reads: Read2 aftering filtering:21629
+
+total bases: total reads: 324435019346
+Q20 bases: 
+3183880total bases: (290190098.1361%)
+
+Q20 bases: Q30 bases: 30836092825281((97.3597%)95.0455
+Q30 bases: %)
+2706165
+(Filtering result:93.2549
+%)
+reads passed filter: 
+43258Filtering result:
+
+reads failed due to low quality: reads passed filter: 34038692
+
+reads failed due to too many N: reads failed due to low quality: 2776
+
+reads failed due to too many N: reads failed due to too short: 010
+
+reads failed due to too short: Q20 bases: 03043946
+(96.8777%)
+Q30 bases: 2898432(92.2465%)
+
+Filtering result:
+reads passed filter: 41894
+reads failed due to low quality: 1232
+reads failed due to too many N: 10
+reads failed due to too short: 0
+Read1 before filtering:
+total reads: 26333
+total bases: 3949950
+Q20 bases: 3889086(98.4591%)
+Q30 bases: 3781468(95.7346%)
+
+Read2 before filtering:
+total reads: 26333
+total bases: 3949950
+Q20 bases: 3859147(97.7012%)
+Q30 bases: 3734697(94.5505%)
+
+Read1 after filtering:
+total reads: 26102
+total bases: 3915300
+Q20 bases: 3859446(98.5734%)
+Q30 bases: 3757241(95.963%)
+
+Read2 aftering filtering:
+total reads: 26102
+total bases: 3915300
+Q20 bases: 3842182(98.1325%)
+Q30 bases: 3725512(95.1527%)
+
+Filtering result:
+reads passed filter: 52204
+reads failed due to low quality: 452
+reads failed due to too many N: 10
+reads failed due to too short: 0
+
+Duplication rate: 15.7348%
+
+Insert size peak (evaluated by paired-end reads): 132
+
+Duplication rate: 13.8153%
+
+Insert size peak (evaluated by paired-end reads): 153
+
+Duplication rate: 7.98233%
+
+Insert size peak (evaluated by paired-end reads): 142
+
+Duplication rate: 25.4637%
+
+Insert size peak (evaluated by paired-end reads): 187
+
+Duplication rate: 22.0999%
+
+Insert size peak (evaluated by paired-end reads): 152
+
+JSON report: 1.QC/P19024999_QC_report.json
+HTML report: 1.QC/P19024999_QC_report.html
+
+/mnt/dfc_data1/home/lixuefei/Pipeline/QC/Bin/../Software/fastp -i RawData/P19024999_1.fq.gz -o 1.QC/P19024999_1.clean.fq.gz -I RawData/P19024999_2.fq.gz -O 1.QC/P19024999_2.clean.fq.gz -A -j 1.QC/P19024999_QC_report.json -h 1.QC/P19024999_QC_report.html 
+fastp v0.20.0, time used: 2 seconds
+
+JSON report: 1.QC/P19027319_QC_report.json
+HTML report: 1.QC/P19027319_QC_report.html
+
+/mnt/dfc_data1/home/lixuefei/Pipeline/QC/Bin/../Software/fastp -i RawData/P19027319_1.fq.gz -o 1.QC/P19027319_1.clean.fq.gz -I RawData/P19027319_2.fq.gz -O 1.QC/P19027319_2.clean.fq.gz -A -j 1.QC/P19027319_QC_report.json -h 1.QC/P19027319_QC_report.html 
+fastp v0.20.0, time used: 2 seconds
+
+JSON report: 1.QC/P19023351_QC_report.json
+HTML report: 1.QC/P19023351_QC_report.html
+
+/mnt/dfc_data1/home/lixuefei/Pipeline/QC/Bin/../Software/fastp -i RawData/P19023351_1.fq.gz -o 1.QC/P19023351_1.clean.fq.gz -I RawData/P19023351_2.fq.gz -O 1.QC/P19023351_2.clean.fq.gz -A -j 1.QC/P19023351_QC_report.json -h 1.QC/P19023351_QC_report.html 
+fastp v0.20.0, time used: 2 seconds
+
+
+JSON report: 1.QC/P19025748_QC_report.jsonJSON report: 
+1.QC/P19020827_QC_report.jsonHTML report: 
+1.QC/P19025748_QC_report.htmlHTML report: 
+1.QC/P19020827_QC_report.html
+
+/mnt/dfc_data1/home/lixuefei/Pipeline/QC/Bin/../Software/fastp -i RawData/P19025748_1.fq.gz -o 1.QC/P19025748_1.clean.fq.gz -I RawData/P19025748_2.fq.gz -O 1.QC/P19025748_2.clean.fq.gz -A -j 1.QC/P19025748_QC_report.json -h 1.QC/P19025748_QC_report.html 
+
+/mnt/dfc_data1/home/lixuefei/Pipeline/QC/Bin/../Software/fastp -i RawData/P19020827_1.fq.gz -o 1.QC/P19020827_1.clean.fq.gz -I RawData/P19020827_2.fq.gz -O 1.QC/P19020827_2.clean.fq.gz -A -j 1.QC/P19020827_QC_report.json -h 1.QC/P19020827_QC_report.html fastp v
+0.20.0fastp v, time used: 0.20.0, time used: 2 seconds2
+ seconds
+
+JSON report: 1.QC/P19023405_QC_report.json
+HTML report: 1.QC/P19023405_QC_report.html
+
+/mnt/dfc_data1/home/lixuefei/Pipeline/QC/Bin/../Software/fastp -i RawData/P19023405_1.fq.gz -o 1.QC/P19023405_1.clean.fq.gz -I RawData/P19023405_2.fq.gz -O 1.QC/P19023405_2.clean.fq.gz -A -j 1.QC/P19023405_QC_report.json -h 1.QC/P19023405_QC_report.html 
+fastp v0.20.0, time used: 2 seconds
+Finished job 2.
+1 of 13 steps (8%) done
+
+JSON report: 1.QC/P19027686_QC_report.json
+HTML report: 1.QC/P19027686_QC_report.html
+
+/mnt/dfc_data1/home/lixuefei/Pipeline/QC/Bin/../Software/fastp -i RawData/P19027686_1.fq.gz -o 1.QC/P19027686_1.clean.fq.gz -I RawData/P19027686_2.fq.gz -O 1.QC/P19027686_2.clean.fq.gz -A -j 1.QC/P19027686_QC_report.json -h 1.QC/P19027686_QC_report.html 
+fastp v0.20.0, time used: 2 seconds
+
+JSON report: 1.QC/P19019419_QC_report.json
+HTML report: 1.QC/P19019419_QC_report.html
+
+/mnt/dfc_data1/home/lixuefei/Pipeline/QC/Bin/../Software/fastp -i RawData/P19019419_1.fq.gz -o 1.QC/P19019419_1.clean.fq.gz -I RawData/P19019419_2.fq.gz -O 1.QC/P19019419_2.clean.fq.gz -A -j 1.QC/P19019419_QC_report.json -h 1.QC/P19019419_QC_report.html 
+fastp v0.20.0, time used: 2 seconds
+Finished job 6.
+2 of 13 steps (15%) done
+Finished job 10.
+3 of 13 steps (23%) done
+Finished job 11.
+4 of 13 steps (31%) done
+Finished job 3.
+5 of 13 steps (38%) done
+Finished job 8.
+6 of 13 steps (46%) done
+Finished job 4.
+7 of 13 steps (54%) done
+Finished job 5.
+8 of 13 steps (62%) done
+Finished job 9.
+9 of 13 steps (69%) done
+Finished job 12.
+10 of 13 steps (77%) done
+Finished job 7.
+11 of 13 steps (85%) done
+
+rule StatQC:
+    input: 1.QC/P19019419_QC_report.json, 1.QC/P19020827_QC_report.json, 1.QC/P19021799_QC_report.json, 1.QC/P19021808_QC_report.json, 1.QC/P19021811_QC_report.json, 1.QC/P19023351_QC_report.json, 1.QC/P19023405_QC_report.json, 1.QC/P19024999_QC_report.json, 1.QC/P19025748_QC_report.json, 1.QC/P19027319_QC_report.json, 1.QC/P19027686_QC_report.json
+    output: 2.Final/QCStat.xlsx
+    log: logs/StatQC.e, logs/StatQC.o
+    jobid: 1
+
+/mnt/dfc_data1/home/lixuefei/Pipeline/QC/Bin/../Software/python /mnt/dfc_data1/home/lixuefei/Pipeline/QC/Bin/../Lib/StatData.py -i /mnt/dfc_data1/home/lixuefei/Pipeline/QC/Test -o 2.Final/QCStat.xlsx
+/mnt/dfc_data1/home/lixuefei/Pipeline/QC/Bin/../Software/python: can't open file '/mnt/dfc_data1/home/lixuefei/Pipeline/QC/Bin/../Lib/StatData.py': [Errno 2] No such file or directory
+Error in job StatQC while creating output file 2.Final/QCStat.xlsx.
+RuleException:
+CalledProcessError in line 24 of /mnt/dfc_data1/home/lixuefei/Pipeline/QC/Test/snakefile.txt:
+Command '/mnt/dfc_data1/home/lixuefei/Pipeline/QC/Bin/../Software/python /mnt/dfc_data1/home/lixuefei/Pipeline/QC/Bin/../Lib/StatData.py -i /mnt/dfc_data1/home/lixuefei/Pipeline/QC/Test -o 2.Final/QCStat.xlsx' returned non-zero exit status 2.
+  File "/mnt/dfc_data1/home/lixuefei/Pipeline/QC/Test/snakefile.txt", line 24, in __rule_StatQC
+  File "/mnt/dfc_data1/software/anaconda2/envs/snakemake-5.8.1/lib/python3.6/concurrent/futures/thread.py", line 56, in run
+Will exit after finishing currently running jobs.
+Exiting because a job execution failed. Look above for error message

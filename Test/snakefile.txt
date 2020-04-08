@@ -1,0 +1,25 @@
+Samples = "P19019419 P19020827 P19021799 P19021808 P19021811 P19023351 P19023405 P19024999 P19025748 P19027319 P19027686".split()
+rule All:
+	input:
+		"2.Final/QCStat.xlsx"
+
+rule QC:
+	input:
+		a = "RawData/{sample}_1.fq.gz", b = "RawData/{sample}_2.fq.gz"
+	output:
+		a = "1.QC/{sample}_1.clean.fq.gz", b = "1.QC/{sample}_2.clean.fq.gz", c = "1.QC/{sample}_QC_report.json", d = "1.QC/{sample}_QC_report.html"
+	log:
+		e = "logs/{sample}.qc.e", o = "logs/{sample}.qc.o"
+	shell:
+		"/mnt/dfc_data1/home/lixuefei/Pipeline/QC/Bin/../Software/fastp -i {input.a} -o {output.a} -I {input.b} -O {output.b} -A -j {output.c} -h {output.d}"
+
+rule StatQC:
+	input:
+		expand("1.QC/{sample}_QC_report.json", sample=Samples)
+	output:
+		"2.Final/QCStat.xlsx"
+	log:
+		e = "logs/StatQC.e", o = "logs/StatQC.o"
+	shell:
+		"/mnt/dfc_data1/home/lixuefei/Pipeline/QC/Bin/../Software/python /mnt/dfc_data1/home/lixuefei/Pipeline/QC/Bin/../Lib/StatData.py -i /mnt/dfc_data1/home/lixuefei/Pipeline/QC/Test -o {output}"
+
